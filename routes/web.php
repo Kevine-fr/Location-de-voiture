@@ -20,15 +20,12 @@ Route::prefix('admin')->name('admin')->group(function () {
     Route::get('/', function () {
         return view('dashboard');
     })->name('');
-    Route::prefix('voitures')->name('.voitures')->group(function () {
-        Route::get('/liste', function () {
-            return view('voitures.liste');
-        })->name('.liste');
-        Route::get('/details/{id}', function ($id) {
-            // $v = Voiture::find($id)
-            // return view('voitures.details', compact('v'));
-            return view('voitures.details');
-        })->name('.details');
-        
+    Route::controller(VoitureController::class)->prefix('voitures')->name('.voitures')->group(function () {
+        Route::get('/modifier','update')->name('.voitures');
+        Route::get('/liste','index')->name('.liste'); //
+        Route::get('/details/{id}','show')->name('.details');
+        Route::post('/enregistrer','store')->name('.enregistrer');
+        //Route::post('/modifier','edit')->name('.modifier');
+        //Route::post('/supprimer','delete')->name('.supprimer');
     });
 });

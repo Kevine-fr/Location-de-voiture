@@ -7,7 +7,7 @@
 	<meta name="description" content="Qoduby - Admin & Dashboard template by tempload.">
 	<meta name="keywords" content="qoduby, tempload, bootstrap, bootstrap 5, admin, template, dashboard, theme, admin themes, admin, templates">
 	<meta name="author" content="tempload">	
-	<title>Qoduby - Admin & Dashboard Template</title>
+	<title>Gestion voiture</title>
 
 	<!-- Favicon -->
 	<link rel="icon" type="image/png" href="{{asset('assets/auth/media/logo/favicon.png')}}">	
@@ -52,9 +52,7 @@
 				</ul>
 				<!-- ***** Dashboards Menu End ***** -->
 
-				<div class="menu-title mb-2">
-					<small>PAGES</small>
-				</div>
+				
 				<ul class="menu-group m-0 px-4 mb-4">
 					<li class="single-menu">
 						<a href="{{ route('admin.voitures.liste') }}" class="d-flex align-items-center justify-content-between">
@@ -83,22 +81,14 @@
 							</div>
 						</a>
 					</li>
-					<li class="single-menu">
-						<a href="projects-car-rental-reservation-details.html" class="d-flex align-items-center justify-content-between">
-							<div class="d-flex align-items-center">
-								<i data-feather="alert-circle" stroke-width="1.5" height="18" class="me2"></i>
-								<span>Details Reservations</span>
-							</div>
-						</a>
-					</li>
-
+					
 				</ul>
 
-				<div class="menu-title mb-2">
+				<!--<div class="menu-title mb-2">
 					<small>PAGES</small>
-				</div>
+				</div>-->
 				
-				<ul class="menu-group m-0 px-4 mb-4">
+				<!--<ul class="menu-group m-0 px-4 mb-4">
 					<li class="sub-menu">
 						<a href="javascript:;" class="d-flex align-items-center justify-content-between">
 							<div class="d-flex align-items-center">
@@ -127,7 +117,7 @@
 							<li><a href="pages-authentication-new-password.html"><span>New Password</span></a></li>
 						</ul>
 					</li>
-				</ul>
+				</ul> -->
 				<!-- ***** Pages Menu End ***** -->
 			</div>
 			<!-- ***** Sidebar Menu End ***** -->

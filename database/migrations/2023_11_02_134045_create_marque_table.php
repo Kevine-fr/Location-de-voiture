@@ -11,15 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('voitures', function (Blueprint $table) {
+        Schema::create('marque', function (Blueprint $table) {
             $table->id();
-            $table->string('marque_id');
-            $table->string('modele_id');
-            $table->string('annee');
-            $table->string('plaque_immatriculation');
-            $table->string('statut_id');
-            $table->string('actions');
-            $table->string('image');
+            $table->string('nom');
             $table->timestamps();
         });
     }
@@ -29,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('voitures');
+        Schema::dropIfExists('marque');
     }
 };
