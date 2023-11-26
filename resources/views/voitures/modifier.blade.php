@@ -1,139 +1,112 @@
-<!-- Add Modal Start -->
-<div class="modal fade" id="addCarModal" tabindex="-1" aria-labelledby="addCarModalLabel" aria-hidden="true">
-		<div class="modal-dialog modal-lg">
-			<div class="modal-content">
-				<form method="post" action="{{ route('admin.voitures.enregistrer')}}" id="add" class="" novalidate="">
-					@csrf
-					<div class="modal-header px-4">
-						<h5 class="modal-title fs-5">Ajouter une voiture</h5>
-						<button type="button" class="outline-none border-0 p0 bg-transparent" data-bs-dismiss="modal" aria-label="Close">
-							<i data-feather="x" stroke-width="1.5" class="text-body"></i>
-						</button>
-					</div>
-					<div class="modal-body p6 px-3">
-						<div class="container-fluid">
-							<div class="row mb5">
-								<div class="col-12">
-									<label for="add-car-form-1" class="form-label">
-										<span>Choisir une photo</span>
-										<span class="text-danger">*</span>
-										<i data-feather="info" stroke-width="2" height="12" class="text-body" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-custom-class="qd-tooltip" data-bs-title="Supports: *.png or *.jpg"></i>
-									</label>
-									<div id="drop-area" class="d-flex bg-light">
-										<div class="width-120 height-120 border-dashed rounded bg-body-secondary position-relative overflow-hidden d-flex align-items-center justify-content-center">
-											<i data-feather="image" stroke-width="1.5" class="text-body"></i>
-											<div class="img-fix width-120 height-120 position-absolute top-0 start-0">
-												<img id="preview-img" class="">
-											</div>
-										</div>
-										<div class="d-flex flex-grow-1 align-items-center justify-content-center">
-											<div class="d-flex flex-column justify-content-start align-items-center">
-												<strong class="d-block mb2">Glisser-déposer</strong>
-												<span class="d-block mb2">OU</span>
-												<label for="fileElem" id="fileSelect" class="d-block mb3 text-primary">Parcourir la photo</label>
-												<small>Supports: *.png, *.jpg and *.jpeg</small>
-											</div>
-										</div>
-										<input type="file" id="fileElem" accept="image/*" class="d-none">
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-sm-6 mb5">
-									<label for="add-car-form-2" class="form-label">
-										<span>Marque</span>
-										<span class="text-danger">*</span>
-										<i data-feather="info" stroke-width="2" height="12" class="text-body" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-custom-class="qd-tooltip" data-bs-title="Choose a car brand from the list."></i>
-									</label>
-									<select name="marque_id" id="add-car-form-2" class="form-select js-choice" required="">
-										<option value="">Choisir la marque</option>
-										@foreach($marques as $marque)
-										<option value="{{$marque->id}}">{{$marque->nom}}</option>
-										@endforeach
-									</select>
-									<div class="invalid-feedback">Veuillez sélectionner une marque.</div>
-								</div>
-								<div class="col-sm-6 mb5">
-									<label for="add-car-form-3" class="form-label">
-										<span>Modèle</span>
-										<span class="text-danger">*</span>
-										<i data-feather="info" stroke-width="2" height="12" class="text-body" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-custom-class="qd-tooltip" data-bs-title="After choosing a brand, choose a model."></i>
-									</label>
-									<select name="modele_id" id="add-car-form-3" class="form-select js-choice" required="">
-										<option value="">Choisir le modele</option>
-										@foreach($modeles as $modele)
-										<option value="{{$modele->id}}">{{$modele->nom}}</option>
-										@endforeach
-										
-									</select>
-									<div class="invalid-feedback">Veuillez sélectionner un modèle.</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-sm-6 mb5">
-									<label for="add-car-form-4" class="form-label">
-										<span>Année</span>
-										<span class="text-danger">*</span>
-										<i data-feather="info" stroke-width="2" height="12" class="text-body" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-custom-class="qd-tooltip" data-bs-title="Select the traffic license date of the car."></i>
-									</label>
-									<input type = "number" name= "annee" id="add-car-form-4" class="form-input" required="">
-										
-									<div class="invalid-feedback">Veuillez sélectionner une année.</div>
+@extends('layouts.admin')
 
-								</div>
-								<div class="col-sm-6 mb5">
-									<label for="add-car-form-5" class="form-label">
-										<span>Status</span>
-										<span class="text-danger">*</span>
-										<i data-feather="info" stroke-width="2" height="12" class="text-body" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-custom-class="qd-tooltip" data-bs-title="Select the status of the car being published on the site."></i>
-									</label>
-									<select name= "statut_id" id="add-car-form-5" class="form-select js-choice" required="">
-										<option value="">Sélectionner le statut</option>
-										@foreach($statuts as $statut)
-										<option value="{{$statut->id}}">{{$statut->nom}}</option>
-										@endforeach
-										
-									</select>
-									<div class="invalid-feedback">Veuillez sélectionner un statut.</div>
-								</div>
-							</div>
-							<div class="row">
-									<label for="add-car-form-7" class="form-label">
-										<span>plaque immatriculation</span>
-										<span class="text-danger">*</span>
-										<i data-feather="info" stroke-width="2" height="12" class="text-body" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-custom-class="qd-tooltip" data-bs-title="Write down the license plate of the vehicle."></i>
-									</label>
-									<input name = "plaque_immatriculation" id="add-car-form-7" class="form-control" type="text" required="">
-									<div class="invalid-feedback">Veuillez remplir tous les champs.</div>
-							</div>
-							<div class="row">
-								<div class="col-lg-4 mb5">
-									<div class="checkbox checkbox-primary me4">
-										<input type="checkbox" name="check1" id="add-car-form-8" checked="">
-										<label for="add-car-form-8">Y a-t-il un siège auto pour enfant ? </label>
+@section('contenu')
+
+<div class="app-content p6 pb2 smp1">
+	<div class="container p0">
+		<!-- Page Top Start -->
+		<div class="row mb6 align-items-center">
+			<div class="col-md-6 mobile-bottom-fix">
+				<h1 class="page-title mb2">Volkswagen - Golf TSI 2017</h1>
+				<nav class="breadcrumb-nav" aria-label="breadcrumb">
+					<ol class="breadcrumb">
+						<li class="breadcrumb-item"><a href="#">Accueil</a></li>
+						<li class="breadcrumb-item"><a href="#">Détails de la voiture</a></li>
+						<li class="breadcrumb-item active" aria-current="page">Volkswagen - Golf TSI 2017</li>
+					</ol>
+				</nav>
+			</div>
+			<div class="col-md-6 text-start text-md-end">
+				<!-- Add Button Start-->
+				<button class="btn btn-primary btn-soft" data-bs-toggle="modal" data-bs-target="#addCarModal">Modifier une voiture</button>
+				<!-- Add Button End-->
+			</div>
+		</div>
+		<!-- Page Top End -->
+
+		<!-- Info Start -->
+		<div class="row">
+			<!-- Left Rows Start -->
+			<div class="col-xxl-8">
+				<!-- Info Card Start -->
+				<div class="row">
+					<div class="col-12 mb6">
+						<div class="card shadow-card p6">
+							<div class="row align-items-center">
+								<div class="col-md-7 mobile-bottom-fix">
+									<div class="w-100 height-280 img-fix rounded">
+										<img src="assets/media/cars/5.jpeg" alt="">
 									</div>
 								</div>
-								<div class="col-lg-4 mb5">
-									<div class="checkbox checkbox-primary me4">
-										<input type="checkbox" name="check1" id="add-car-form-9">
-										<label for="add-car-form-9">Peut-il être loué mensuellement ?</label>
+								<div class="col-md-5">
+									<div class="row mb6">
+										<div class="col-5">
+											<span>Marque</span>
+										</div>
+										<div class="col-7">
+											<strong class="text-heading">Volkswagen</strong>
+										</div>
 									</div>
-								</div>
-								<div class="col-lg-4 mb5">
-									<div class="checkbox checkbox-primary me4">
-										<input type="checkbox" name="check1" id="add-car-form-10">
-										<label for="add-car-form-10">Il s'agit d'un autre lieu ?</label>
+									<div class="row mb6">
+										<div class="col-5">
+											<span>Modele</span>
+										</div>
+										<div class="col-7">
+											<strong class="text-heading">Golf TSI 2017</strong>
+										</div>
+									</div>
+									<div class="row mb6">
+										<div class="col-5">
+											<span>Année</span>
+										</div>
+										<div class="col-7">
+											<strong class="text-heading">2017</strong>
+										</div>
+									</div>
+									<div class="row mb6">
+										<div class="col-5">
+											<span>Plaque d'immatriculation</span>
+										</div>
+										<div class="col-7">
+											<div class="border border-dark width-160 rounded overflow-hidden d-flex" dir="ltr">
+												<div class="bg-primary width-40 height-30 d-flex align-items-center justify-content-center text-white">D</div>
+												<div class="w-100 d-flex align-items-center justify-content-center bg-white">
+													<h6 class="mb0 text-dark">KA PA 777</h6>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-5">
+											<span>Status</span>
+										</div>
+										<div class="col-7">
+											<span class="badge rounded-pill badge-soft text-bg-success">Published</span>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
-						<button type="submit" class="btn btn-primary">Enregistrer les modifications</button>
-					</div>
-				</form>
+				</div>
+				<!-- Info Card End -->
+
+				
 			</div>
+			<!-- Left Rows End -->
+
+			<!-- Map Start -->
+			<div class="col-xxl-4 mb6">
+				<div class="card shadow-card p6">
+					<div id="car-map" class="w-100 height-490 rounded"></div>
+				</div>
+			</div>
+			<!-- Map End -->
 		</div>
+		<!-- Info End -->
+
+		
 	</div>
-	<!-- Add Modal End -->
+</div>
+	
+@endsection

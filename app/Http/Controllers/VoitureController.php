@@ -20,6 +20,7 @@ class VoitureController extends Controller
         $marques = Marque::all();
         $modeles = Modele::all();
         $statuts = Statut::all();
+        //dd($statuts);
 
         return view('voitures.liste', compact('voitures','marques','modeles','statuts'));
     }
@@ -74,10 +75,10 @@ class VoitureController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Voitures $voiture)
     {
-        $voiture = Voitures::findOrFail($id);
-        return view('edit', compact('voiture'));
+        //dd($voiture);
+        return view('voitures.modifier', compact('voiture'));
     }
 
     /**
@@ -97,11 +98,10 @@ class VoitureController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Voitures $voiture)
     {
-        $voiture = Voitures::findOrFail($id);
         $voiture->delete();
     
-        return redirect('/voitures')->with('success', 'Voitures supprimer avec succèss');
+        return back()->with('success', 'Voitures supprimer avec succèss');
     }
 }
