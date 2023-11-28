@@ -19,7 +19,7 @@ use App\Http\Controllers\ProfileController;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
 Route::get('/dashboard', function () {
@@ -39,7 +39,7 @@ Route::prefix('admin')->name('admin')->group(function () {
         $modeles = Modele::all();
         $statuts = Statut::all();
         return view('dashboard',compact('voitures','marques','modeles','statuts'));
-    })->name('');
+    })->middleware(['auth', 'verified'])->name('');
     Route::controller(VoitureController::class)->prefix('voitures')->name('.voitures')->group(function () {
         Route::get('/modifier','update')->name('.voitures');
         Route::get('/liste','index')->name('.liste'); //
