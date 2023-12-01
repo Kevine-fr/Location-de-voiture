@@ -5,17 +5,32 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+
 class Voitures extends Model
 {
     use HasFactory;
-    protected $fillable = ['marque_id', 'modele_id', 'annee', 'plaque_immatriculation', 'statut_id','image'];
-    public function modele(){
-        return $this->hasOne(Modele::class,'id','modele_id');
+
+    protected $fillable = [
+        'image',
+        'marque_id',
+        'modele_id',
+        'annee',
+        'statut_id',
+        'plaque_immatriculation',
+        'siege_auto',
+        'location_semaine',
+        'location_mois',
+        'gasoil',
+        'essence',
+    ];
+
+    public function marque()
+    {
+        return $this->belongsTo(Marque::class, 'marque_id');
     }
-    public function marque(){
-        return $this->hasOne(Marque::class,'id','marque_id');
-    }
-    public function statut(){
-        return $this->hasOne(Statut::class,'id','statut_id');
+
+    public function modele()
+    {
+        return $this->belongsTo(Modele::class, 'modele_id');
     }
 }
