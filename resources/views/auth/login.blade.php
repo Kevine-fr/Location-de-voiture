@@ -38,7 +38,7 @@
                     {{ __('Forgot your password?') }}
                 </a>
             @endif
-            <a class="ml-2 underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="/register">
+            <a style="padding-left: 5px; padding-right: 5px; backgroung-color: rgb(47, 177, 203); padding-top: 3px; padding-bottom: 3px;" class="ml-2 text-sm text-gray-600 bg-red-200 rounded-md " href="/register">
                 {{__('Register')}}
             </a>
 

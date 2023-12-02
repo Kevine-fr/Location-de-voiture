@@ -9,7 +9,7 @@
     <meta name="keywords"
         content="qoduby, tempload, bootstrap, bootstrap 5, admin, template, dashboard, theme, admin themes, admin, templates">
     <meta name="author" content="tempload">
-    <title>Gestion voiture</title>
+    <title>Gestion vehicule</title>
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="{{ asset('assets/auth/media/logo/favicon.png') }}">
@@ -47,7 +47,7 @@
                         <a href="{{ route('admin') }}" class="d-flex align-items-center justify-content-between">
                             <div class="d-flex align-items-center">
                                 <i data-feather="home" stroke-width="1.5" height="20" class="me2"></i>
-                                <span>Dashboards</span>
+                                <span>Tableau de bord</span>
                             </div>
                             <!-- <i class="arrow" data-feather="chevron-right" height="14"></i> -->
                         </a>
@@ -546,7 +546,7 @@
                                 <ul class="nav flex-column text-start p0">
                                     <li class="nav-item">
                                         <a class="nav-link text-heading hover-primary ps0"
-                                            href="pages-account-user-overview.html">My Profile</a>
+                                            href="pages-account-user-overview.html">Mon Profile</a>
                                     </li>
 
                                 </ul>

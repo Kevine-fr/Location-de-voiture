@@ -47,7 +47,11 @@ Route::prefix('admin')->name('admin')->group(function () {
         Route::post('/enregistrer','store')->name('.enregistrer');
         Route::get('/{voiture}/modifier','edit')->name('.modifier');
         Route::delete('/{voiture}','destroy')->name('.destroy');
+       
+
     });
 });
+
+Route::view('/maps','maps'); 
 
 require __DIR__.'/auth.php';
