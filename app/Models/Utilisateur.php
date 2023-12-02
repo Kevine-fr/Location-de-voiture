@@ -12,7 +12,6 @@ use App\Http\Controllers\UtilisateursController;
 class Utilisateur extends Model
 {
     use HasFactory, HasApiTokens;
-    protected $table='Utilisateurs';
     protected $fillable=[
         ' nom',
         ' prenom',
@@ -20,4 +19,6 @@ class Utilisateur extends Model
         ' password',
         ' telephone'
     ];
+
+    
 }

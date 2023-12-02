@@ -1,11 +1,8 @@
 <?php
 
-use App\Models\Marque;
-use App\Models\Modele;
-use App\Models\Statut;
-use App\Models\Voitures;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\AdministrateurController;
 
 /*
 |--------------------------------------------------------------------------
@@ -32,14 +29,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+
 Route::prefix('admin')->name('admin')->group(function () {
-    Route::get('/', function () {
-        $voitures = Voitures::all();
-        $marques = Marque::all();
-        $modeles = Modele::all();
-        $statuts = Statut::all();
-        return view('dashboard',compact('voitures','marques','modeles','statuts'));
-    })->middleware(['auth', 'verified'])->name('');
+    Route::get('/', [AdministrateurController::class, 'index'])->middleware(['auth', 'verified']);
     Route::controller(VoitureController::class)->prefix('voitures')->name('.voitures')->group(function () {
         Route::get('/modifier','update')->name('.voitures');
         Route::get('/liste','index')->name('.liste'); //
@@ -49,5 +41,7 @@ Route::prefix('admin')->name('admin')->group(function () {
         Route::delete('/{voiture}','destroy')->name('.destroy');
     });
 });
+
+Route::view('/maps', 'maps');
 
 require __DIR__.'/auth.php';

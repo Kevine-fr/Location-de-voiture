@@ -8,6 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Statut extends Model
 {
     use HasFactory;
-    protected $table = 'Statut';
     protected $fillable = ['nom', 'couleur'];
 }

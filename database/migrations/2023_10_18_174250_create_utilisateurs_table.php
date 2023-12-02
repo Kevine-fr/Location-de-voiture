@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('telephone');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

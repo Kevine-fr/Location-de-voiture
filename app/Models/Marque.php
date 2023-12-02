@@ -8,6 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Marque extends Model
 {
     use HasFactory;
-    protected $table = 'Marque';
     protected $fillable = ['nom'];
+    protected $primarykey = 'id';
 }
