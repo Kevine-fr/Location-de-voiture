@@ -57,7 +57,6 @@ Route::prefix('admin')->name('admin')->group(function () {
 
 Route::view('/maps','maps'); 
 
-Route::view('/maps','maps'); 
 
 // marque routes start
 // Afficher la liste des marques
