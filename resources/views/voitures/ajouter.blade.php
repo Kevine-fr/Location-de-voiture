@@ -112,9 +112,9 @@
                                 <select name= "statut_id" id="add-car-form-5" class="form-select js-choice"
                                     required="">
                                     <option value="">Choisir le statut</option>
-                                    @foreach ($statuts as $statut)
+                                    {{-- @foreach ($statuts as $statut)
                                         <option value="{{ $statut->id }}">{{ $statut->nom }}</option>
-                                    @endforeach
+                                    @endforeach --}}
 
                                 </select>
                                 <div class="invalid-feedback">Veuillez choisir un statut.</div>

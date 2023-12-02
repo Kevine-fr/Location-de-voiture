@@ -61,7 +61,7 @@
                         <a href="{{ route('admin.voitures.liste') }}"
                             class="d-flex align-items-center justify-content-between">
                             <div class="d-flex align-items-center">
-                                <i data-feather="alert-circle" stroke-width="1.5" height="18" class="me2"></i>
+                                <i data-feather="list" stroke-width="1.5" height="18" class="me2"></i>
                                 <span>Liste De Voiture</span>
                             </div>
                         </a>
@@ -71,8 +71,28 @@
                         <a href="{{ route('admin.voitures.details', ['id' => 1]) }}"
                             class="d-flex align-items-center justify-content-between">
                             <div class="d-flex align-items-center">
-                                <i data-feather="alert-circle" stroke-width="1.5" height="18" class="me2"></i>
+                                <i data-feather="detail" stroke-width="1.5" height="18" class="me2"></i>
                                 <span>Detail Voiture</span>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="single-menu">
+                        <a href="{{ route('marques.liste') }}"
+                            class="d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <i data-feather="list" stroke-width="1.5" height="18" class="me2"></i>
+                                <span>liste des marques</span>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="single-menu">
+                        <a href="{{ route('modeles.liste') }}"
+                            class="d-flex align-items-center justify-content-between">
+                            <div class="d-flex align-items-center">
+                                <i data-feather="list" stroke-width="1.5" height="18" class="me2"></i>
+                                <span>liste des modeles</span>
                             </div>
                         </a>
                     </li>
@@ -130,6 +150,8 @@
 
             <!-- ***** Sidebar Footer Start ***** -->
             <div class="sidebar-footer d-flex align-items-center justify-content-center">
+                <i data-feather="settings" stroke-width="1.5" height="18" class="me2"></i>
+
                 <a href="../../../../documentation/index.html" class="sidebar-footer-button">Parametre</a>
             </div>
             <!-- ***** Sidebar Footer End ***** -->

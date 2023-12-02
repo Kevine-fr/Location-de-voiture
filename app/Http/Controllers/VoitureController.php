@@ -19,10 +19,9 @@ class VoitureController extends Controller
         $voitures = Voitures::all();
         $marques = Marque::all();
         $modeles = Modele::all();
-        $statuts = Statut::all();
-        //dd($statuts);
+        // $nombreDeMarques = Marque::count();
 
-        return view('voitures.liste', compact('voitures','marques','modeles','statuts'));
+        return view('voitures.liste', compact('voitures','marques','modeles'));
     }
 
     /**
@@ -43,16 +42,16 @@ class VoitureController extends Controller
             'marque_id' => 'required|max:255',
             'modele_id' => 'required',
         ]);
-    
+
         $voiture = Voitures::create($request->all());
-        $filename=$request->file("image")->getClientOriginalName(); //avoir le nom de l'image 
+        $filename=$request->file("image")->getClientOriginalName(); //avoir le nom de l'image
         $file=$request->file("image");
         $path=$file->storeAs('public/image',str_replace(' ','_',$filename)); //enregister l'image dans le dossier public etde storage
         $path=str_replace('public/','storage/',$path);//permet de remplacer les espaces dans le fichei
         $url = url($path);//
         $voiture->update(['image'=>$url]);
         //dd($voiture);
-    
+
         return redirect()->route('admin.voitures.liste')->with('success', 'Voitures créer avec succèss');
     }
 
@@ -70,7 +69,7 @@ class VoitureController extends Controller
         'staut'=>1,
         ' data'=>$v
     ]);
-   
+
 }
     /**
      * Show the form for editing the specified resource.
@@ -90,9 +89,9 @@ class VoitureController extends Controller
             'marque' => 'required|max:255',
             'modele' => 'required'
         ]);
-    
+
         Voitures::whereId($id)->update($validatedData);
-    
+
         return redirect('/voitures')->with('success', 'Voitures mise à jour avec succèss');
     }
     /**
@@ -101,7 +100,7 @@ class VoitureController extends Controller
     public function destroy(Voitures $voiture)
     {
         $voiture->delete();
-    
+
         return back()->with('success', 'Voitures supprimer avec succèss');
     }
 }

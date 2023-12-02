@@ -1,7 +1,8 @@
 @extends('layouts.admin')
 
 @section('avant-contenu')
-    @include('voitures.ajouter')
+    @include('marques.ajouter')
+
 @endsection
 
 
@@ -11,7 +12,7 @@
             <!-- Page Top Start -->
             <div class="row mb6 align-items-center">
                 <div class="col-md-6 mobile-bottom-fix">
-                    <h1 class="page-title mb2">Tableau de bord</h1>
+                    <h1 class="page-title mb2">Modifier  marques</h1>
 
                 </div>
                 <div class="col-md-6 text-start text-md-end">
@@ -69,97 +70,62 @@
                     </div>
                     <!-- Filter Dropdown End-->
 
+                    <!-- Add Button Start-->
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addmarqueModal">Ajouter une
+                        marque</button>
+                    <!-- Add Button End-->
                 </div>
             </div>
             <!-- Page Top End -->
 
             <!-- Mini Widgets Start -->
-            <div class="row mb2">
-                <!-- Widget 1 Start -->
-                <div class="col-xxl-4 mb5">
-                    <div class="bg-primary rounded-3 pt2 pb5 text-center">
-                        <h6 class="text-white mb0">Voiture totale</h6>
-                    </div>
-                    <div class="card shadow-card p5 text-center mtn4">
-                        <h1 class="mb1">{{ count($voitures->where('statut_id', 2)) }}</h1>
-                        <span>Vehicules disponibles a la location</span>
-                    </div>
-                </div>
-                <!-- Widget 1 End -->
 
-                <!-- Widget 2 Start -->
-                <div class="col-xxl-4 mb5">
-                    <div class="bg-info rounded-3 pt2 pb5 text-center">
-                        <h6 class="text-white mb0">Reservation</h6>
-                    </div>
-                    <div class="card shadow-card p5 text-center mtn4">
-                        <h1 class="mb1">{{ count($voitures->where('statut_id', 3)) }}</h1>
-                        <span>Nouvelles reservations entrantes</span>
-                    </div>
-                </div>
-                <!-- Widget 2 End -->
-
-                <!-- Widget 3 Start -->
-                <div class="col-xxl-4 mb5">
-                    <div class="bg-success rounded-3 pt2 pb5 text-center">
-                        <h6 class="text-white mb0">Vehicule Defectueux</h6>
-                    </div>
-                    <div class="card shadow-card p5 text-center mtn4">
-                        <h1 class="mb1">{{ count($voitures->where('statut_id', 1)) }}</h1>
-                        <span>Vehicules en maintenance</span>
-                    </div>
-                </div>
-                <!-- Widget 3 End -->
-
-                 <!-- Widget 4 Start -->
-                 <div class="col-xxl-4 mb5">
-                    <div class="bg-success rounded-3 pt2 pb5 text-center">
-                        <h6 class="text-white mb0">nombre de marques</h6>
-                    </div>
-                    <div class="card shadow-card p5 text-center mtn4">
-                        <h1 class="mb1"></h1>
-                        <span>Vehicules en maintenance</span>
-                    </div>
-                </div>
-                <!-- Widget 4 End -->
-            </div>
             <!-- Mini Widgets End -->
 
-
-
-            </td>
-
-
-            </tr>
-
-
-            </tbody>
-            </table>
+            <!-- Content Start -->
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <form method="post" action="" id="add-marque-form" novalidate="">
+                        @csrf
+                        @method('PUT')
+                        <div class="modal-header px-4">
+                            <h5 class="modal-title fs-5">Modifier un model</h5>
+                            <button type="button" class="outline-none border-0 p0 bg-transparent" data-bs-dismiss="modal"
+                                    aria-label="Close">
+                                <i data-feather="x" stroke-width="1.5" class="text-body"></i>
+                            </button>
+                        </div>
+                        <div class="modal-body p6 px-3">
+                            <div class="container-fluid">
+                                <div class="row mb5">
+                                    <div class="col-sm-12 mb5">
+                                        <label for="new-marque" class="form-label">
+                                            <span>nom du model</span>
+                                            <span class="text-danger">*</span>
+                                        </label>
+                                        <input type="text" name="modele" id="modele" class="form-control" value="{{ $modele->nom}}" >                                        <label for="new-marque" class="form-label">
+                                            <span>Marque</span>
+                                            <span class="text-danger">*</span>
+                                        </label>
+                                        {{-- <select name="marque_id" id="marque_id" class="form-select">
+                                            @foreach($marques as $marque)
+                                                <option value="{{ $marque->id }}" {{ $marque->id == $modele->marque_id ? 'selected' : '' }}>
+                                                    {{ $marque->nom }}
+                                                </option>
+                                            @endforeach
+                                        </select> --}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fermer</button>
+                            <button type="submit" class="btn btn-primary">Enregistrer la nouvelle marque</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- Content End -->
         </div>
-        <nav aria-label="Page navigation example">
-            <ul class="pagination justify-content-center align-items-center">
-                <li class="page-item">
-                    <a class="page-link">
-                        <i class="arrow" data-feather="chevron-left" width="14"></i>
-                    </a>
-                </li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item active"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item"><a class="page-link" href="#">4</a></li>
-                <li class="page-item"><a class="page-link" href="#">5</a></li>
-                <li class="page-item"><a class="page-link" href="#">6</a></li>
-                <li class="page-item">
-                    <a class="page-link" href="#">
-                        <i class="arrow" data-feather="chevron-right" width="14"></i>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </div>
-    </div>
-    </div>
-    <!-- Content End -->
-    </div>
     </div>
 @endsection
