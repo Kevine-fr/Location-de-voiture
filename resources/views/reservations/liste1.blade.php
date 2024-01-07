@@ -1,19 +1,18 @@
 @extends('layouts.admin')
 
 @section('avant-contenu')
-    @include('voitures.ajouter')
+    @include('reservation.liste1')
+ 
 @endsection
 
-@php
-  //dd(['voitures'=>$voitures,'marques'=>$marques,'modeles'=>$modeles,'statuts'=>$statuts]);  
-@endphp
+
 @section('contenu')
     <div class="app-content p6 pb2 smp1">
         <div class="container p0">
             <!-- Page Top Start -->
             <div class="row mb6 align-items-center">
                 <div class="col-md-6 mobile-bottom-fix">
-                    <h1 class="page-title mb2">Tableau de bord</h1>
+                    <h1 class="page-title mb2">Liste des voitures</h1>
 
                 </div>
                 <div class="col-md-6 text-start text-md-end">
@@ -71,84 +70,62 @@
                     </div>
                     <!-- Filter Dropdown End-->
 
+                    <!-- Add Button Start-->
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addCarModal">Ajouter une
+                        voiture</button>
+                    <!-- Add Button End-->
                 </div>
             </div>
             <!-- Page Top End -->
 
             <!-- Mini Widgets Start -->
-            <div class="row mb2">
-                <!-- Widget 1 Start -->
-                <div class="col-xxl-4 mb5">
-                    <div class="bg-primary rounded-3 pt2 pb5 text-center">
-                        <h6 class="text-white mb0">Vehicules</h6>
-                    </div>
-                    <div class="card shadow-card p5 text-center mtn4">
-                        <h1 class="mb1">{{ count($voitures) }}</h1>
-                        <span>Vehicules disponibles a la location</span>
-                    </div>
-                </div>
-                <!-- Widget 1 End -->
-
-                <!-- Widget 2 Start -->
-                <div class="col-xxl-4 mb5">
-                    <div class="bg-info rounded-3 pt2 pb5 text-center">
-                        <h6 class="text-white mb0">Reservations</h6>
-                    </div>
-                    <div class="card shadow-card p5 text-center mtn4">
-                        <h1 class="mb1">{{ count($reservations) }}</h1>
-                        <span>Nouvelles reservations entrantes</span>
-                    </div>
-                </div>
-
-                 <!-- Widget 4 Start -->
-                 <div class="col-xxl-4 mb5">
-                    <div class="bg-success rounded-3 pt2 pb5 text-center">
-                        <h6 class="text-white mb0">Marques</h6>
-                    </div>
-                    <div class="card shadow-card p5 text-center mtn4">
-                        <h1 class="mb1">{{ count($marques) }}</h1>
-                        <span>Nombre total de marques</span>
-                    </div>
-                </div>
-                <!-- Widget 4 End -->
-            </div>
+            
             <!-- Mini Widgets End -->
 
-
-
-            </td>
-
-
-            </tr>
-
-
-            </tbody>
-            </table>
+            <!-- Content Start -->
+            <div class="row mb5">
+                <div class="col-12">
+                    <div class="card shadow-card p6 pt3">
+                        <div class="table-responsive text-nowrap">
+                            <table class="table qd-table mb6 align-middle">
+                                <thead>
+                                    <tr>
+                                        <th scope="col"></th>
+                                        <th scope="col">MARQUE</th>
+                                        <th scope="col">MODELE</th>
+                                        <th scope="col">ANNEE</th>
+                                        <th scope="col">PLAQUE D'IMMATRICULATION</th>
+                                        <th scope="col">STATUT</th>
+                                        <th scope="col" class="text-end">ACTIONS</th>
+                                    </tr>
+                                </thead>
+                               
+                            </table>
+                        </div>
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination justify-content-center align-items-center">
+                                <li class="page-item">
+                                    <a class="page-link">
+                                        <i class="arrow" data-feather="chevron-left" width="14"></i>
+                                    </a>
+                                <!--</li>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item active"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                <li class="page-item"><a class="page-link" href="#">5</a></li>
+                                <li class="page-item"><a class="page-link" href="#">6</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">
+                                        <i class="arrow" data-feather="chevron-right" width="14"></i>
+                                    </a>
+                                </li>-->
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <!-- Content End -->
         </div>
-       <!-- <nav aria-label="Page navigation example">
-            <ul class="pagination justify-content-center align-items-center">
-                <li class="page-item">
-                    <a class="page-link">
-                        <i class="arrow" data-feather="chevron-left" width="14"></i>
-                    </a>
-                </li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item active"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item"><a class="page-link" href="#">4</a></li>
-                <li class="page-item"><a class="page-link" href="#">5</a></li>
-                <li class="page-item"><a class="page-link" href="#">6</a></li>
-                <li class="page-item">
-                    <a class="page-link" href="#">
-                        <i class="arrow" data-feather="chevron-right" width="14"></i>
-                    </a>
-                </li>
-            </ul>
-        </nav>-->
-    </div>
-    </div>
-    </div>
-    <!-- Content End -->
-    </div>
     </div>
 @endsection

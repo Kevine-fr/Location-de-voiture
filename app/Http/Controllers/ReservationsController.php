@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Reservation;
+use App\Models\Voitures;
 
 class ReservationsController extends Controller
 {
@@ -52,6 +53,12 @@ class ReservationsController extends Controller
             'status' => 1,
             'message' => 'Réservation supprimée avec succès'
         ]);
+    }   
+    public function  liste() {
+        $reservations = Reservation::all();
+       //dd($reservation);
+        return view('reservations.liste', compact('reservations'));
+        //return 'salut';
     }
 
 

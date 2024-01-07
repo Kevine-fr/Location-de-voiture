@@ -4,12 +4,16 @@ use App\Models\Marque;
 use App\Models\Modele;
 use App\Models\Statut;
 use App\Models\Voitures;
-use App\Http\Controllers\MarqueController;
-use App\Http\Controllers\ModeleController;
-
+use App\Models\Reservation;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MarqueController;
+
+use App\Http\Controllers\ModeleController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\VoitureController;
+//use App\Htpp\Controllers\ReservationsController;
 use App\Http\Controllers\AdministrateurController;
+use App\Http\Controllers\ReservationsController;
 
 /*
 |--------------------------------------------------------------------------
@@ -46,11 +50,12 @@ Route::prefix('admin')->name('admin')->group(function () {
         Route::post('/enregistrer','store')->name('.enregistrer');
         Route::get('/{voiture}/modifier','edit')->name('.modifier');
         Route::delete('/{voiture}','destroy')->name('.destroy');
-        Route::get('/liste.reservations','')->name('.liste.reservations');
 
     });
 
 });
+Route::get('/reservation/liste',[ReservationsController::class,'liste'])->name('liste.reservations');
+
 
 Route::view('/maps','maps'); 
 
@@ -92,3 +97,5 @@ Route::put('/modeles/{id}', [ModeleController::class, 'update'])->name('modeles.
 Route::delete('/modeles/{id}', [ModeleController::class, 'destroy'])->name('modeles.destroy');
 // model route end
 require __DIR__.'/auth.php';
+
+//

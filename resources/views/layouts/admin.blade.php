@@ -99,7 +99,7 @@
 
 
                     <li class="single-menu">
-                        <a href=""
+                        <a href="{{ route('liste.reservations') }}"
                             class="d-flex align-items-center justify-content-between">
                             <div class="d-flex align-items-center">
                                 <i data-feather="list" stroke-width="1.5" height="18" class="me2"></i>
