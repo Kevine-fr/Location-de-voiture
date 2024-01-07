@@ -90,6 +90,7 @@
                             <table class="table qd-table mb6 align-middle">
                                 <thead>
                                     <tr>
+                                        <th scope="col"></th>
                                         <th scope="col">MARQUE</th>
                                         <th scope="col">MODELE</th>
                                         <th scope="col">ANNEE</th>
@@ -101,13 +102,16 @@
                                 <tbody>
                                     @foreach ($voitures as $voiture)
                                         <tr>
+
                                             <td>
                                                 <div class="d-inline-flex flex-row align-items-center">
-                                                    <div class="width-120 height-80 img-fix rounded me4">
+                                                    <div class=" img-fluid rounded me4">
                                                         <img src="{{ $voiture->image }}" alt="{{ $voiture->image }}">
                                                     </div>
-                                                    <strong>{{ $voiture->marque->nom }}</strong>
                                                 </div>
+                                            </td>
+                                            <td>
+                                                <strong>{{ $voiture->marque->nom }}</strong>  
                                             </td>
                                             <td>
                                                 <strong class="text-heading">{{ $voiture->modele->nom }}</strong>
@@ -128,19 +132,23 @@
                                             </td>
                                             <td>
                                                 <span
-                                                    class="badge rounded-pill badge-soft text-dark text-bg-{{ $voiture->statut->couleur }}">{{ $voiture->statut->nom }}</span>
+                                                    class="badge rounded-pill badge-soft text-dark @if ($voiture->statut=='disponible')
+                                                    text-bg-success
+                                                    @elseif($voiture->statut=='Pas Disponible')
+                                                    text-bg-danger
+                                                    @endif ">{{ $voiture->statut}}</span>
                                             </td>
-                                            <td>
+                                            <td class="">
                                                 <div class="dropdown text-end">
                                                     <button type="button"
-                                                        class="outline-none dropdown-toggle arrow-none border-0 height-40 rounded ps3 bg-body-secondary opacity-75"
+                                                        class="outline-none dropdown-toggle arrow-none border-0 height-40 rounded ps3 bg-body-secondary opacity-75 mr-2 me-2"
                                                         data-bs-auto-close="outside" data-bs-toggle="dropdown"
                                                         aria-expanded="false">
                                                         <span class="text-heading">Actions</span>
                                                         <i data-feather="chevron-down" stroke-width="2" height="16"
                                                             class="text-heading"></i>
                                                     </button>
-                                                    <ul class="dropdown-menu text-start">
+                                                    <ul class="dropdown-menu text-start ml-2">
                                                         <li><a class="dropdown-item" href="{{route('admin.voitures.modifier', $voiture)}}">Modifier</a></li>
                                                         <li>
                                                             <form action="{{ route('admin.voitures.destroy', $voiture) }}"
@@ -174,7 +182,7 @@
                                     <a class="page-link">
                                         <i class="arrow" data-feather="chevron-left" width="14"></i>
                                     </a>
-                                </li>
+                                <!--</li>
                                 <li class="page-item"><a class="page-link" href="#">1</a></li>
                                 <li class="page-item active"><a class="page-link" href="#">2</a></li>
                                 <li class="page-item"><a class="page-link" href="#">3</a></li>
@@ -185,7 +193,7 @@
                                     <a class="page-link" href="#">
                                         <i class="arrow" data-feather="chevron-right" width="14"></i>
                                     </a>
-                                </li>
+                                </li>-->
                             </ul>
                         </nav>
                     </div>

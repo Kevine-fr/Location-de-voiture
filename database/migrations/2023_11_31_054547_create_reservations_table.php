@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('motif');
             $table->string('num_piece_identite');
             $table->timestamps();
-            $table->foreign('utilisateur_id')->references('id')->on('users');
+            $table->foreign('utilisateur_id')->references('id')->on('utilisateurs');
             $table->foreign('voiture_id')->references('id')->on('voitures');
         });
     }

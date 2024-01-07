@@ -113,7 +113,7 @@
 
                                             </td>
 
-                                            <td>
+                                            <td class="d-flex justify-content-end">
                                                 <a class="btn btn-warning" href="{{ route('modeles.edit',$modele->id)}}">Modifier</a>
                                                 {{-- <form action="{{ route('modeles.destroy', $model->id) }}" method="POST">
                                                     @csrf
@@ -133,7 +133,7 @@
                                     <a class="page-link">
                                         <i class="arrow" data-feather="chevron-left" width="14"></i>
                                     </a>
-                                </li>
+                                <!--</li>
                                 <li class="page-item"><a class="page-link" href="#">1</a></li>
                                 <li class="page-item active"><a class="page-link" href="#">2</a></li>
                                 <li class="page-item"><a class="page-link" href="#">3</a></li>
@@ -144,7 +144,7 @@
                                     <a class="page-link" href="#">
                                         <i class="arrow" data-feather="chevron-right" width="14"></i>
                                     </a>
-                                </li>
+                                </li>-->
                             </ul>
                         </nav>
                     </div>

@@ -2,7 +2,6 @@
 
 @section('avant-contenu')
     @include('marques.ajouter')
-
 @endsection
 
 
@@ -108,16 +107,18 @@
                                                 <strong class="text-heading">{{ $marque->nom }}</strong>
                                             </td>
 
-                                            <td>
+                                            <td class="d-flex justify-content-end">
                                                 {{-- <a  class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#editmodal">Edit</a> --}}
 
-                                                <a class="btn btn-warning" href="{{ route('marques.edit',$marque->id)}}">
+                                                <a class="btn btn-warning" href="{{ route('marques.edit', $marque->id) }}">
                                                     Modifier
-                                                </a>                                                    <form action="{{ route('marques.destroy', $marque->id) }}" method="POST">
+                                                </a>
+                                                <form style="margin-left: 5px;" action="{{ route('marques.destroy', $marque->id) }}" method="POST">
                                                     @csrf
                                                     @method('DELETE')
                                                     <button type="submit" class="btn btn-danger">Supprimer</button>
-                                                </form>                                            </td>
+                                                </form>
+                                            </td>
                                         </tr>
                                     @endforeach
 
@@ -130,7 +131,7 @@
                                     <a class="page-link">
                                         <i class="arrow" data-feather="chevron-left" width="14"></i>
                                     </a>
-                                </li>
+                               <!-- </li>
                                 <li class="page-item"><a class="page-link" href="#">1</a></li>
                                 <li class="page-item active"><a class="page-link" href="#">2</a></li>
                                 <li class="page-item"><a class="page-link" href="#">3</a></li>
@@ -141,7 +142,7 @@
                                     <a class="page-link" href="#">
                                         <i class="arrow" data-feather="chevron-right" width="14"></i>
                                     </a>
-                                </li>
+                                </li> -->
                             </ul>
                         </nav>
                     </div>

@@ -11,11 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('modeles', function (Blueprint $table) {
+        Schema::create('administrateurs', function (Blueprint $table) {
             $table->id();
             $table->string('nom');
-            $table->unsignedBigInteger('marque_id');
-            $table->foreign('marque_id')->references('id')->on('marques');
+            $table->string('prenom');
+            $table->string('email');
+            $table->string('password');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -26,9 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('modeles', function (Blueprint $table) {
-            $table->dropForeign(['marque_id']);
-        });
-        Schema::dropIfExists('modeles');
+        Schema::dropIfExists('administrateur');
     }
 };

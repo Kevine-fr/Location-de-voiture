@@ -64,9 +64,9 @@ class VoitureController extends Controller
         return view('voitures.details', compact('v'));
     }
     public function list() {
-    $v=Voitures::with('marque','modele','statut')->get();
+    $v=Voitures::with('marque','modele',)->get();
     return response()->json([
-        'staut'=>1,
+        'statut'=>1,
         ' data'=>$v
     ]);
 
@@ -76,8 +76,10 @@ class VoitureController extends Controller
      */
     public function edit(Voitures $voiture)
     {
+        $marques = Marque::all();
+        $modeles = Modele::all();
         //dd($voiture);
-        return view('voitures.modifier', compact('voiture'));
+        return view('voitures.modifier', compact('voiture','modeles','marques'));
     }
 
     /**

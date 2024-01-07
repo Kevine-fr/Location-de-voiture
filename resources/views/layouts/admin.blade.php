@@ -62,12 +62,12 @@
                             class="d-flex align-items-center justify-content-between">
                             <div class="d-flex align-items-center">
                                 <i data-feather="list" stroke-width="1.5" height="18" class="me2"></i>
-                                <span>Liste De Voiture</span>
+                                <span>Liste De Vehicules</span>
                             </div>
                         </a>
                     </li>
 
-                    <li class="single-menu">
+                    <!--<li class="single-menu">
                         <a href="{{ route('admin.voitures.details', ['id' => 1]) }}"
                             class="d-flex align-items-center justify-content-between">
                             <div class="d-flex align-items-center">
@@ -75,7 +75,7 @@
                                 <span>Detail Voiture</span>
                             </div>
                         </a>
-                    </li>
+                    </li>-->
 
                     <li class="single-menu">
                         <a href="{{ route('marques.liste') }}"
@@ -99,11 +99,11 @@
 
 
                     <li class="single-menu">
-                        <a href="projects-car-rental-reservations.html"
+                        <a href=""
                             class="d-flex align-items-center justify-content-between">
                             <div class="d-flex align-items-center">
-                                <i data-feather="alert-circle" stroke-width="1.5" height="18" class="me2"></i>
-                                <span>Reservations</span>
+                                <i data-feather="list" stroke-width="1.5" height="18" class="me2"></i>
+                                <span>liste des reservations</span>
                             </div>
                         </a>
                     </li>
@@ -187,7 +187,7 @@
                                                 <div class="cover">
                                                     <img src="{{ asset('assets/auth/media/menu/1.jpg') }}"
                                                         class="img-fluid w-100" alt="">
-                                                    <div
+                                                    <!--<div
                                                         class="text p-3 d-flex align-items-center justify-content-center">
                                                         <div class="text-center">
                                                             <h6 class="text-white mb-1">Want to see an overview?</h6>
@@ -195,7 +195,7 @@
                                                             <a href="#" class="btn btn-success">View All
                                                                 Pages</a>
                                                         </div>
-                                                    </div>
+                                                    </div>-->
                                                 </div>
                                             </div>
                                             <div class="col-lg-5">

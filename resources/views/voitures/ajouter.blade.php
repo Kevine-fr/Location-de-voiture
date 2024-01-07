@@ -109,12 +109,15 @@
                                         data-bs-custom-class="qd-tooltip"
                                         data-bs-title="Select the status of the car being published on the site."></i>
                                 </label>
-                                <select name= "statut_id" id="add-car-form-5" class="form-select js-choice"
+                                <select name= "statut" id="add-car-form-5" class="form-select js-choice"
                                     required="">
                                     <option value="">Choisir le statut</option>
-                                    {{-- @foreach ($statuts as $statut)
+                                     {{--@foreach ($statuts as $statut)
                                         <option value="{{ $statut->id }}">{{ $statut->nom }}</option>
-                                    @endforeach --}}
+                                    @endforeach--}}
+                                    <option value="Disponible">Disponible</option>
+                                    <option value="Pas Disponible">Pas Disponible</option>
+                                    <option value="Annulee">Annulee</option> 
 
                                 </select>
                                 <div class="invalid-feedback">Veuillez choisir un statut.</div>

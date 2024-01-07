@@ -9,6 +9,7 @@ class Marque extends Model
 {
     use HasFactory;
     protected $fillable = ['nom'];
+    protected $primarykey = 'id';
 
     public function modeles()
     {

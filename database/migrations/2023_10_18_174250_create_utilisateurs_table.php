@@ -3,6 +3,10 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\validator;
+use App\Http\Controllers\UtilisateursController;
+
 
 return new class extends Migration
 {
@@ -11,11 +15,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('modeles', function (Blueprint $table) {
+        Schema::create('utilisateurs', function (Blueprint $table) {
             $table->id();
             $table->string('nom');
-            $table->unsignedBigInteger('marque_id');
-            $table->foreign('marque_id')->references('id')->on('marques');
+            $table->string('prenom');
+            $table->string('email');
+            $table->string('password');
+            $table->string('telephone');
             $table->timestamps();
             $table->softDeletes();
         });
@@ -26,9 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('modeles', function (Blueprint $table) {
-            $table->dropForeign(['marque_id']);
-        });
-        Schema::dropIfExists('modeles');
+        Schema::dropIfExists('utilisateurs');
     }
 };

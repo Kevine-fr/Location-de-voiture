@@ -15,7 +15,7 @@ class Voitures extends Model
         'marque_id',
         'modele_id',
         'annee',
-        'statut_id',
+        'statut',
         'plaque_immatriculation',
         'siege_auto',
         'location_semaine',

@@ -9,6 +9,7 @@ use App\Http\Controllers\ModeleController;
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\AdministrateurController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,13 +36,9 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+
 Route::prefix('admin')->name('admin')->group(function () {
-    Route::get('/', function () {
-        $voitures = Voitures::all();
-        $marques = Marque::all();
-        $modeles = Modele::all();
-        return view('dashboard',compact('voitures','marques','modeles'));
-    })->middleware(['auth', 'verified'])->name('');
+    Route::get('/', [AdministrateurController::class, 'index'])->middleware(['auth', 'verified']);
     Route::controller(VoitureController::class)->prefix('voitures')->name('.voitures')->group(function () {
         Route::get('/modifier','update')->name('.voitures');
         Route::get('/liste','index')->name('.liste'); //
@@ -49,7 +46,7 @@ Route::prefix('admin')->name('admin')->group(function () {
         Route::post('/enregistrer','store')->name('.enregistrer');
         Route::get('/{voiture}/modifier','edit')->name('.modifier');
         Route::delete('/{voiture}','destroy')->name('.destroy');
-       
+        Route::get('/liste.reservations','')->name('.liste.reservations');
 
     });
 

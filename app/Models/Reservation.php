@@ -10,7 +10,6 @@ use App\Http\Controllers\ReservationsController;
 class Reservation extends Model
 {
     use HasFactory;
-    protected $table = "Reservations";
     protected $fillable =[
         'utilisateur_id',
         'voiture_id',

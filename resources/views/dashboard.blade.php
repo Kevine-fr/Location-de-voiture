@@ -4,7 +4,9 @@
     @include('voitures.ajouter')
 @endsection
 
-
+@php
+  //dd(['voitures'=>$voitures,'marques'=>$marques,'modeles'=>$modeles,'statuts'=>$statuts]);  
+@endphp
 @section('contenu')
     <div class="app-content p6 pb2 smp1">
         <div class="container p0">
@@ -78,10 +80,10 @@
                 <!-- Widget 1 Start -->
                 <div class="col-xxl-4 mb5">
                     <div class="bg-primary rounded-3 pt2 pb5 text-center">
-                        <h6 class="text-white mb0">Voiture totale</h6>
+                        <h6 class="text-white mb0">Vehicule totale</h6>
                     </div>
                     <div class="card shadow-card p5 text-center mtn4">
-                        <h1 class="mb1">{{ count($voitures->where('statut_id', 2)) }}</h1>
+                        <h1 class="mb1">{{ ($voitures) }}</h1>
                         <span>Vehicules disponibles a la location</span>
                     </div>
                 </div>
@@ -93,22 +95,22 @@
                         <h6 class="text-white mb0">Reservation</h6>
                     </div>
                     <div class="card shadow-card p5 text-center mtn4">
-                        <h1 class="mb1">{{ count($voitures->where('statut_id', 3)) }}</h1>
+                        <h1 class="mb1">{{ ($voitures) }}</h1>
                         <span>Nouvelles reservations entrantes</span>
                     </div>
                 </div>
                 <!-- Widget 2 End -->
 
                 <!-- Widget 3 Start -->
-                <div class="col-xxl-4 mb5">
+                <!--<div class="col-xxl-4 mb5">
                     <div class="bg-success rounded-3 pt2 pb5 text-center">
                         <h6 class="text-white mb0">Vehicule Defectueux</h6>
                     </div>
                     <div class="card shadow-card p5 text-center mtn4">
-                        <h1 class="mb1">{{ count($voitures->where('statut_id', 1)) }}</h1>
+                        <h1 class="mb1">{{ ($voitures) }}</h1>
                         <span>Vehicules en maintenance</span>
                     </div>
-                </div>
+                </div> --.>
                 <!-- Widget 3 End -->
 
                  <!-- Widget 4 Start -->
@@ -117,8 +119,8 @@
                         <h6 class="text-white mb0">nombre de marques</h6>
                     </div>
                     <div class="card shadow-card p5 text-center mtn4">
-                        <h1 class="mb1"></h1>
-                        <span>Vehicules en maintenance</span>
+                        <h1 class="mb1">{{ ($voitures) }}</h1>
+                        <span>Nombre total de marques</span>
                     </div>
                 </div>
                 <!-- Widget 4 End -->
@@ -136,7 +138,7 @@
             </tbody>
             </table>
         </div>
-        <nav aria-label="Page navigation example">
+       <!-- <nav aria-label="Page navigation example">
             <ul class="pagination justify-content-center align-items-center">
                 <li class="page-item">
                     <a class="page-link">
@@ -155,7 +157,7 @@
                     </a>
                 </li>
             </ul>
-        </nav>
+        </nav>-->
     </div>
     </div>
     </div>
