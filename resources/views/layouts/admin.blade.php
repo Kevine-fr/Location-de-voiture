@@ -34,7 +34,7 @@
             <!-- ***** Logo Start ***** -->
             <div class="sidebar-logo d-flex justify-content-center">
                 <a href="index.html">
-                    <img src="{{ asset('assets/auth/media/logo/logo-default.svg') }}" height="30" alt="Qoduby">
+                    <img src="{{ asset('assets/auth/media/logo/logo-default.svg') }}" height="30" alt="DomCarCenter">
                 </a>
             </div>
             <!-- ***** Logo End ***** -->
@@ -62,7 +62,7 @@
                             class="d-flex align-items-center justify-content-between">
                             <div class="d-flex align-items-center">
                                 <i data-feather="list" stroke-width="1.5" height="18" class="me2"></i>
-                                <span>Liste De Vehicules</span>
+                                <span>Liste des Vehicules</span>
                             </div>
                         </a>
                     </li>
@@ -549,7 +549,7 @@
                                 <div class="d-flex flex-column text-start">
                                     <div class="d-flex flex-row align-items-center">
                                         <strong class="text-heading me1">Dominique</strong>
-                                        <span class="badge badge-soft rounded-pill text-bg-success">Pro</span>
+                                        <span class="badge badge-soft rounded-pill text-bg-success"></span>
                                     </div>
                                     <small>SuperTronics</small>
                                 </div>
@@ -579,7 +579,7 @@
                                 <x-dropdown-link :href="route('logout')"
                                     onclick="event.preventDefault();
 													this.closest('form').submit();">
-                                    {{ __('Log Out') }}
+                                    {{ __('Déconnexion') }}
                                 </x-dropdown-link>
                             </form>
                             <hr class="opacity-20">

@@ -55,7 +55,7 @@ Route::prefix('admin')->name('admin')->group(function () {
 
 });
 Route::get('/reservation/liste',[ReservationsController::class,'liste'])->name('liste.reservations');
-
+Route::get('/reservation/send_mail',[ReservationsController::class,'sendMailToReservation'])->name('liste.sendMail');
 
 Route::view('/maps','maps'); 
 

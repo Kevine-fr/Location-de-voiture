@@ -7,7 +7,7 @@
             <!-- Page Top Start -->
             <div class="row mb6 align-items-center">
                 <div class="col-md-6 mobile-bottom-fix">
-                    <h1 class="page-title mb2">Liste des voitures</h1>
+                    <h1 class="page-title mb2">Liste des réservations</h1>
 
                 </div>
                 <div class="col-md-6 text-start text-md-end">
@@ -18,7 +18,7 @@
                             <i data-feather="filter" stroke-width="1.5" height="16" class="me2 text-body"></i>
                             <span class="text-body">Filtre</span>
                         </button>
-                        <div class="dropdown-menu width-300 p0">
+                        <!--<div class="dropdown-menu width-300 p0">
                             <div class="border-bottom-dashed">
                                 <h6 class="mb0 p4 px-4">Filtre Options</h6>
                             </div>
@@ -61,13 +61,13 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div>-->
                     </div>
                     <!-- Filter Dropdown End-->
 
                     <!-- Add Button Start-->
-                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addCarModal">Ajouter une
-                        voiture</button>
+                    <!--<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addCarModal">Ajouter une
+                        voiture</button>-->
                     <!-- Add Button End-->
                 </div>
             </div>
@@ -85,18 +85,20 @@
                             <table class="table qd-table mb6 align-middle">
                                 <thead>
                                     <tr>
-                                        <th scope="col"></th>
-                                        <th scope="col">MARQUE</th>
-                                        <th scope="col">MODELE</th>
-                                        <th scope="col">ANNEE</th>
-                                        <th scope="col">PLAQUE D'IMMATRICULATION</th>
-                                        <th scope="col">STATUT</th>
+                                        <th scope="col">ID</th>
+                                        <th scope="col">NOM vehicule</th>
+                                        <th scope="col">DATE DEBUT</th>
+                                        <th scope="col">DATE FIN</th>
+                                        <th scope="col">NOM CLIENT</th>
+                                        <th scope="col">MONTANT</th>
+                                        <th scope="col">MODE PAIEMENT</th>
                                         <th scope="col" class="text-end">ACTIONS</th>
                                     </tr>
                                 </thead>
                                
                             </table>
                         </div>
+                        
                         <nav aria-label="Page navigation example">
                             <ul class="pagination justify-content-center align-items-center">
                                 <li class="page-item">

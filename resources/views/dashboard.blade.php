@@ -24,7 +24,7 @@
                             <i data-feather="filter" stroke-width="1.5" height="16" class="me2 text-body"></i>
                             <span class="text-body">Filtre</span>
                         </button>
-                        <div class="dropdown-menu width-300 p0">
+                        <!--<div class="dropdown-menu width-300 p0">
                             <div class="border-bottom-dashed">
                                 <h6 class="mb0 p4 px-4">Filtre Options</h6>
                             </div>
@@ -67,7 +67,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div>-->
                     </div>
                     <!-- Filter Dropdown End-->
 

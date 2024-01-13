@@ -12,12 +12,12 @@
             <!-- Page Top Start -->
             <div class="row mb6 align-items-center">
                 <div class="col-md-6 mobile-bottom-fix">
-                    <h1 class="page-title mb2">Liste des voitures</h1>
+                    <h1 class="page-title mb2">Liste des vehicules</h1>
 
                 </div>
                 <div class="col-md-6 text-start text-md-end">
                     <!-- Filter Dropdown Start-->
-                    <div class="dropdown d-inline me4">
+                    <!--<div class="dropdown d-inline me4">
                         <button class="btn bg-white d-inline-flex align-items-center dropdown-toggle"
                             data-bs-auto-close="outside" data-bs-toggle="dropdown" aria-expanded="false">
                             <i data-feather="filter" stroke-width="1.5" height="16" class="me2 text-body"></i>
@@ -67,7 +67,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>-->
                     <!-- Filter Dropdown End-->
 
                     <!-- Add Button Start-->

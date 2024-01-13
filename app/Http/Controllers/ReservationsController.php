@@ -3,9 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Mail\MessageReservation;
 use Illuminate\Http\Request;
 use App\Models\Reservation;
+use App\Models\User;
 use App\Models\Voitures;
+use Illuminate\Support\Facades\Mail;
 
 class ReservationsController extends Controller
 {
@@ -61,5 +64,14 @@ class ReservationsController extends Controller
         //return 'salut';
     }
 
+    public function sendMailToReservation (Request $request) {
+    	#2. Récupération des utilisateurs
+		$user = $request->user();
+        //dd("$user");
 
+		#3. Envoi du mail
+		$email = Mail::to($user)->bcc("domjehiel@gmail.com")
+						->queue(new MessageReservation($request->all()));
+		return redirect()->route('liste.reservations');
+	}
 }

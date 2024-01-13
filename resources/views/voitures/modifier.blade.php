@@ -7,7 +7,7 @@
 	<meta name="description" content="Qoduby - Admin & Dashboard template by tempload.">
 	<meta name="keywords" content="qoduby, tempload, bootstrap, bootstrap 5, admin, template, dashboard, theme, admin themes, admin, templates">
 	<meta name="author" content="tempload">	
-	<title>Qoduby - Admin & Dashboard Template</title>
+	<title>SuperTronics - Admin & Dashboard Template</title>
 
 	<!-- Favicon -->
 	<link rel="icon" type="image/png" href="assets/media/logo/favicon.png">	
@@ -152,7 +152,7 @@
 			<!-- ***** Logo Start ***** -->
 			<div class="sidebar-logo d-flex justify-content-center">
 				<a href="index.html">
-					<img src="assets/media/logo/logo-default.svg" height="30" alt="Qoduby">
+					<img src="assets/media/logo/logo-default.svg" height="30" alt="DomCarCenter">
 				</a>
 			</div>
 			<!-- ***** Logo End ***** -->
@@ -662,7 +662,7 @@
 					
 
 					<!-- Last Reservations Start -->
-					<div class="row mb6">
+					<!--<div class="row mb6">
 						<div class="col-12">
 							<div class="card shadow-card p6">
 								<div class="row align-items-center mb4">
@@ -807,7 +807,7 @@
 								</div>
 							</div>
 						</div>
-					</div>
+					</div>-->
 					<!-- Last Reservations End -->
 				</div>
 			</div>
@@ -819,7 +819,7 @@
 					<div class="row">
 						<div class="col-sm-6 text-center text-lg-start mb-sm-1">
 							<span>2023©</span>
-							<span class="text-heading">Qoduby</span>
+							<span class="text-heading">SuperTronics</span>
 						</div>
 						<div class="col-sm-6">
 							<ul class="list-inline m0 text-center text-lg-end">

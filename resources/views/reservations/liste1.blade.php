@@ -71,8 +71,8 @@
                     <!-- Filter Dropdown End-->
 
                     <!-- Add Button Start-->
-                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addCarModal">Ajouter une
-                        voiture</button>
+                    <!--<button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addCarModal">Ajouter une
+                        voiture</button>-->
                     <!-- Add Button End-->
                 </div>
             </div>

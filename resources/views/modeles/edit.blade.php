@@ -17,7 +17,7 @@
                 </div>
                 <div class="col-md-6 text-start text-md-end">
                     <!-- Filter Dropdown Start-->
-                    <div class="dropdown d-inline me4">
+                   <!-- <div class="dropdown d-inline me4">
                         <button class="btn bg-white d-inline-flex align-items-center dropdown-toggle"
                             data-bs-auto-close="outside" data-bs-toggle="dropdown" aria-expanded="false">
                             <i data-feather="filter" stroke-width="1.5" height="16" class="me2 text-body"></i>
@@ -67,7 +67,7 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>-->
                     <!-- Filter Dropdown End-->
 
                     <!-- Add Button Start-->
@@ -100,7 +100,7 @@
                                 <div class="row mb5">
                                     <div class="col-sm-12 mb5">
                                         <label for="new-marque" class="form-label">
-                                            <span>nom du model</span>
+                                            <span>nom du modele</span>
                                             <span class="text-danger">*</span>
                                         </label>
                                         <input type="text" name="modele" id="modele" class="form-control" value="{{ $modele->nom}}" >                                        <label for="new-marque" class="form-label">

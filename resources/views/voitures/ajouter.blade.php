@@ -6,7 +6,7 @@
                 id="add" class="" novalidate="">
                 @csrf
                 <div class="modal-header px-4">
-                    <h5 class="modal-title fs-5">Ajouter une voiture</h5>
+                    <h5 class="modal-title fs-5">Ajouter un vehicule</h5>
                     <button type="button" class="outline-none border-0 p0 bg-transparent" data-bs-dismiss="modal"
                         aria-label="Close">
                         <i data-feather="x" stroke-width="1.5" class="text-body"></i>
