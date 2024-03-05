@@ -49,6 +49,7 @@ Route::prefix('admin')->name('admin')->group(function () {
         Route::get('/details/{id}','show')->name('.details');
         Route::post('/enregistrer','store')->name('.enregistrer');
         Route::get('/{voiture}/modifier','edit')->name('.modifier');
+        Route::get('/{voiture_id}/info', 'getCarWithId')->name('.getCar');
         Route::delete('/{voiture}','destroy')->name('.destroy');
 
     });

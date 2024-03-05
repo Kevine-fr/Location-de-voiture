@@ -21,7 +21,7 @@ class VoitureController extends Controller
         $modeles = Modele::all();
         // $nombreDeMarques = Marque::count();
 
-        return view('voitures.liste', compact('voitures','marques','modeles'));
+        return view('voitures.liste', compact('voitures', 'marques', 'modeles'));
     }
 
     /**
@@ -44,12 +44,12 @@ class VoitureController extends Controller
         ]);
 
         $voiture = Voitures::create($request->all());
-        $filename=$request->file("image")->getClientOriginalName(); //avoir le nom de l'image
-        $file=$request->file("image");
-        $path=$file->storeAs('public/image',str_replace(' ','_',$filename)); //enregister l'image dans le dossier public etde storage
-        $path=str_replace('public/','storage/',$path);//permet de remplacer les espaces dans le fichei
-        $url = url($path);//
-        $voiture->update(['image'=>$url]);
+        $filename = $request->file("image")->getClientOriginalName(); //avoir le nom de l'image
+        $file = $request->file("image");
+        $path = $file->storeAs('public/image', str_replace(' ', '_', $filename)); //enregister l'image dans le dossier public etde storage
+        $path = str_replace('public/', 'storage/', $path); //permet de remplacer les espaces dans le fichei
+        $url = url($path); //
+        $voiture->update(['image' => $url]);
         //dd($voiture);
 
         return redirect()->route('admin.voitures.liste')->with('success', 'Voitures créer avec succèss');
@@ -63,14 +63,14 @@ class VoitureController extends Controller
         $v = Voitures::find($id);
         return view('voitures.details', compact('v'));
     }
-    public function list() {
-    $v=Voitures::with('marque','modele',)->get();
-    return response()->json([
-        'statut'=>1,
-        ' data'=>$v
-    ]);
-
-}
+    public function list()
+    {
+        $v = Voitures::with('marque', 'modele',)->get();
+        return response()->json([
+            'statut' => 1,
+            ' data' => $v
+        ]);
+    }
     /**
      * Show the form for editing the specified resource.
      */
@@ -79,7 +79,7 @@ class VoitureController extends Controller
         $marques = Marque::all();
         $modeles = Modele::all();
         //dd($voiture);
-        return view('voitures.modifier', compact('voiture','modeles','marques'));
+        return view('voitures.modifier', compact('voiture', 'modeles', 'marques'));
     }
 
     /**
@@ -104,5 +104,13 @@ class VoitureController extends Controller
         $voiture->delete();
 
         return back()->with('success', 'Voitures supprimer avec succèss');
+    }
+
+    public function getCarWithId($car_id)
+    {
+        return response()->json([
+            'voiture' => Voitures::find($car_id),
+            'message' => "success",
+        ]);
     }
 }

@@ -46,7 +46,7 @@
                 {{__('S inscrire')}}
             </a>
 
-            <x-primary-button class="ms-3  text-white  bg-blue-500">
+            <x-primary-button class="ms-3  text-white bg-blue-600">
                 {{ __('Connexion') }}
             </x-primary-button>
         </div>
