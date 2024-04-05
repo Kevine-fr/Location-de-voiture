@@ -94,7 +94,7 @@
                                         data-bs-custom-class="qd-tooltip"
                                         data-bs-title="Select the traffic license date of the car."></i>
                                 </label>
-                                <input type = "number" name= "annee" id="add-car-form-4" class="form-input"
+                                <input type = "date" name= "annee" id="add-car-form-4" class="form-input"
                                     required>
 
                                 <div class="invalid-feedback">Veuillez choisir une année.</div>
@@ -137,37 +137,28 @@
                             <div class="invalid-feedback">Veuillez remplir tous les champs.</div>
                         </div>
                         <div class="row">
-                            <div class="col-lg-4 mb5">
-                                <div class="checkbox checkbox-primary me4">
-                                    <input type="checkbox" name="check1" id="add-car-form-8" checked="">
-                                    <label for="add-car-form-8">Y a-t-il un siège auto pour enfant ? </label>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 mb5">
-                                <div class="checkbox checkbox-primary me4">
-                                    <input type="checkbox" name="check1" id="add-car-form-9">
-                                    <label for="add-car-form-9">Peut-il être loué par semaine ?</label>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 mb5">
-                                <div class="checkbox checkbox-primary me4">
-                                    <input type="checkbox" name="check1" id="add-car-form-10">
-                                    <label for="add-car-form-10">Peut-il être loué mensuellement ?</label>
-                                </div>
-                            </div>
-                            <div class="col-lg-4 mb5">
-                                <div class="checkbox checkbox-primary me4">
-                                    <input type="checkbox" name="check1" id="add-car-form-10">
-                                    <label for="add-car-form-10">Gasoil</label>
-                                </div>
-                                <div class="col-lg-4 mb5">
-                                    <div class="checkbox checkbox-primary me4">
-                                        <input type="checkbox" name="check1" id="add-car-form-10">
-                                        <label for="add-car-form-10">Essence</label>
-                                    </div>
-                                </div>
-                            </div>
+                            <label for="add-car-form-7" class="form-label">
+                                <span>Prix du véhicule</span>
+                                <span class="text-danger">*</span>
+                                <i data-feather="info" stroke-width="2" height="12" class="text-body"
+                                    data-bs-toggle="tooltip" data-bs-placement="right"
+                                    data-bs-custom-class="qd-tooltip"
+                                    data-bs-title="Write the price of the vehicle."></i>
+                            </label>
+                            <input name = "prix" id="add-car-form-7" class="form-control"
+                                type="number" required="">
+                            <div class="invalid-feedback">Veuillez remplir tous les champs.</div>
                         </div>
+                        <div class="row">
+                            <select name="option">
+                                <option value="electrique">Électrique</option>
+                                <option value="gasoil">Gasoil</option>
+                                <option value="climatiseur">Climatiseur</option>
+                                <option value="roue_de_secours">Roue de secours</option>
+                                <option value="automatique">Automatique</option>
+                            </select>
+                        </div>
+                        
                     </div>
                 </div>
                 <div class="modal-footer">

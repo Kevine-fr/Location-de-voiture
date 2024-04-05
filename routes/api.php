@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UtilisateursController;
 use Illuminate\Support\Facades\validator;
 use Illuminate\Support\Facades\Auth; 
+use App\Http\Controllers\ClientController;
 use App\Http\Controllers\VoitureController;
 use App\Http\Controllers\ReservationsController;
 /*
@@ -17,6 +18,14 @@ use App\Http\Controllers\ReservationsController;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
+
+Route::get('/voiture/{id}', [VoitureController::class, 'voitureId'])->name('reservation.voitureId');
+Route::get("/voitureShow", [VoitureController::class, 'voitureShow']);
+Route::get("/clientShow", [ClientController::class, 'clientShow']); //Route permettant d'afficher les informations du client
+Route::post("/clientSave", [ClientController::class, 'clientSave']); //Route permettant la sauvegarde du compte du client
+Route::post("register",[UtilisateursController::class,'register']);
+Route::post("login", [UtilisateursController::class, 'login']);
+
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();

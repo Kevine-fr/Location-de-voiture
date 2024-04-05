@@ -17,11 +17,8 @@ class Voitures extends Model
         'annee',
         'statut',
         'plaque_immatriculation',
-        'siege_auto',
-        'location_semaine',
-        'location_mois',
-        'gasoil',
-        'essence',
+        'prix',
+        'option'
     ];
 
     public function marque()

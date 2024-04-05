@@ -19,11 +19,8 @@ return new class extends Migration
             $table->date('annee');
             $table->string('statut')->default('disponible');
             $table->string('plaque_immatriculation');
-            $table->boolean('siege_auto')->default(false);
-            $table->boolean('location_semaine')->default(false);
-            $table->boolean('location_mois')->default(false);
-            $table->boolean('gasoil')->default(false);
-            $table->boolean('essence')->default(false);
+            $table->float('prix');
+            $table->string('option');
             $table->timestamps();
 
             $table->foreign('marque_id')->references('id')->on('marques');
