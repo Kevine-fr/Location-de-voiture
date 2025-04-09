@@ -63,6 +63,29 @@ class VoitureController extends Controller
         $v = Voitures::find($id);
         return view('voitures.details', compact('v'));
     }
+
+    public function voitureShow() {
+        $voitures = Voitures::all();
+        $marques = Marque::all();
+        $modeles = Modele::all();
+    
+        return response()->json([
+            'voitures' => $voitures,
+            'marques' => $marques,
+            'modeles' => $modeles
+        ]);
+    }
+
+    public function voitureId($id)
+{
+    $voiture = Voitures::with('marque', 'modele')->findOrFail($id); // Récupère la voiture avec les données de la marque et du modèle
+    return response()->json([
+        'voiture' => $voiture,
+    ]);
+}
+
+
+    
     public function list()
     {
         $v = Voitures::with('marque', 'modele',)->get();

@@ -13,7 +13,7 @@ use App\Models\Voitures;
 class AdministrateurController extends Controller
 {
     public function index(Request $request) {
-        $voitures = Voitures::all()->where('statut', '==', 'disponible');
+        $voitures = Voitures::all()->where('statut', '==', 'Disponible');
         $marques = Marque::all();
         $modeles = Modele::all();
         $statuts = Statut::all();

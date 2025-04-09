@@ -204,13 +204,7 @@
                                             <div class="col-lg-5">
                                                 <div class="menu-content ps6 sm-p-0">
                                                     <strong class="text-heading d-block mb-2">DASHBOARDS</strong>
-                                                    <ul class="mega-sub-menu">
-                                                        <li><a class="hover-primary" href="index.html">Default</a>
-                                                        </li>
-
-                                                        <li><a class="hover-primary"
-                                                                href="dashboards-car-rental.html">Car Rental</a></li>
-                                                    </ul>
+                                                    
                                                 </div>
                                             </div>
                                         </div>
@@ -487,12 +481,7 @@
                                                 class="text-primary"></i>
                                         </div>
                                     </div>
-                                    <div class="d-flex flex-column align-items-start">
-                                        <strong class="text-heading me1">Qoduby has been sold 🤑</strong>
-                                        <span class="mb1 text-body">You earned $40 from this sale.</span>
-                                        <span class="badge rounded-pill badge-soft text-bg-primary">22 minutes
-                                            ago</span>
-                                    </div>
+                                    
                                 </a>
                                 <hr class="opacity-20 border-dashed">
                                 <a href="#" class="d-flex justify-content-start text-decoration-none">
@@ -503,23 +492,14 @@
                                                 class="text-success"></i>
                                         </div>
                                     </div>
-                                    <div class="d-flex flex-column align-items-start">
-                                        <strong class="text-heading me1">Monthly Report 👨‍💻</strong>
-                                        <span class="mb1 text-body">The monthly report was uploaded.</span>
-                                        <span class="badge rounded-pill badge-soft text-bg-success">27 minutes
-                                            ago</span>
-                                    </div>
+                                    
                                 </a>
                                 <hr class="opacity-20 border-dashed">
                                 <a href="#" class="d-flex justify-content-start text-decoration-none">
                                     <div class="img-fix width-40 height-40 rounded-circle me3">
                                         <img class="rounded-circle" src="assets/media/avatars/8.jpg" alt="">
                                     </div>
-                                    <div class="d-flex flex-column align-items-start">
-                                        <strong class="text-heading me1">New message received 👋🏻</strong>
-                                        <span class="mb1 text-body">You have 7 unread messages.</span>
-                                        <span class="badge rounded-pill badge-soft text-bg-info">48 minutes ago</span>
-                                    </div>
+                                    
                                 </a>
                                 <hr class="opacity-20 border-dashed">
                                 <a class="btn btn-primary btn-soft btn-sm d-block" href="#" role="button">Read

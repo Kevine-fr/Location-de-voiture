@@ -18,7 +18,7 @@ use App\Http\Controllers\ReservationsController;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
-
+Route::post("/reservationSave", [ReservationsController::class, 'ReservationSend']);
 Route::get('/voiture/{id}', [VoitureController::class, 'voitureId'])->name('reservation.voitureId');
 Route::get("/voitureShow", [VoitureController::class, 'voitureShow']);
 Route::get("/clientShow", [ClientController::class, 'clientShow']); //Route permettant d'afficher les informations du client

@@ -74,4 +74,39 @@ class ReservationsController extends Controller
 						->queue(new MessageReservation($request->all()));
 		return redirect()->route('liste.reservations');
 	}
+
+
+    //method Api
+    public function ReservationSend(Request $request){
+        $request->validate([
+            'name' => 'required|string',
+            'email' => 'required|email',
+            'marque' => 'required|string',
+            'modele' => 'required|string',
+            'dateDebut' => 'required|date',
+            'dateFin' => 'required|date',
+            'prix' => 'required|numeric',
+        ]);
+
+        $reservation= new Reservation();
+        $reservation->name = $request->name;
+        $reservation->email= $request->email;
+        $reservation->marque=$request->marque;
+        $reservation->modele = $request->modele;
+        $reservation->dateDebut= $request->dateDebut;
+        $reservation->dateFin=$request->dateFin;
+        $reservation->prix = $request->prix;
+
+        $reservation->save();
+
+        // Insérez ici le code pour enregistrer les données dans la base de données ou autre
+        return response()->json(['message' => 'Données enregistrées avec succès'], 200);
+    }
+
+    public function allReservation(){
+        $reservations = Reservation::all();
+        return view('reservations.liste', compact('reservations'));
+    }
+    
+
 }

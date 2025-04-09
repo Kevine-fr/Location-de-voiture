@@ -34,13 +34,13 @@
                                 <thead>
                                     <tr>
                                         <th scope="col"></th>
-                                        <th scope="col">MARQUE</th>
-                                        <th scope="col">MODELE</th>
-                                        <th scope="col">PRIX</th>
-                                        <th scope="col">ANNEE</th>
-                                        <th scope="col">PLAQUE D'IMMATRICULATION</th>
-                                        <th scope="col">STATUT</th>
-                                        <th scope="col" class="text-end">ACTIONS</th>
+                                        <th scope="col" class="text-black fs-6"> MARQUE</th>
+                                        <th scope="col" class="text-black fs-6">MODELE</th>
+                                        <th scope="col" class="text-black fs-6">PRIX</th>
+                                        <th scope="col" class="text-black fs-6">ANNEE</th>
+                                        <th scope="col" class="text-black fs-6">PLAQUE D'IMMATRICULATION</th>
+                                        <th scope="col" class="text-black fs-6">STATUT</th>
+                                        <th scope="col" class="text-black fs-6">ACTIONS</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -49,7 +49,7 @@
                                             <td>
                                                 <div class="d-inline-flex flex-row align-items-center">
                                                     <div class=" img-fluid rounded me4">
-                                                        <img src="{{ $voiture->image }}" alt="{{ $voiture->image }}">
+                                                        <img  style="height:100px; width:150px" src="{{ $voiture->image }}" alt="{{ $voiture->image }}">
                                                     </div>
                                                 </div>
                                             </td>
@@ -78,7 +78,7 @@
                                             </td>
                                             <td>
                                                 <span
-                                                    class="badge rounded-pill badge-soft text-dark @if ($voiture->statut == 'disponible') text-bg-success
+                                                    class="badge rounded-pill badge-soft text-dark @if ($voiture->statut == 'Disponible') text-bg-success
                                                     @elseif($voiture->statut == 'Pas Disponible')
                                                     text-bg-danger @endif ">{{ $voiture->statut }}</span>
                                             </td>

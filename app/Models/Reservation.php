@@ -10,11 +10,12 @@ class Reservation extends Model
 {
     use HasFactory;
     protected $fillable =[
-        'utilisateur_id',
-        'voiture_id',
+        'name',
+        'email',
+        'marque',
+        'modele',
         'dateDebut',
         'dateFin',
-        'motif',
-        'num_piece_identite'
+        'prix',
     ];
 }

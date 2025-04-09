@@ -1,56 +1,110 @@
 <x-guest-layout>
-    <form method="POST" action="{{ route('register') }}">
-        @csrf
-        
-        <div>
-            <h1 class="text-center text-lg font-bold mb-5">INSCRIPTION</h1>
-        </div>
+    <style>
+        .form-container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f8fafc; /* Couleur de fond */
+            border: 1px solid #cbd5e0; /* Bordure */
+            border-radius: 8px;
+        }
 
-        <!-- Name -->
-        <div>
-            <x-input-label for="name" :value="__('Nom')" />
-            <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
-            <x-input-error :messages="$errors->get('name')" class="mt-2" />
-        </div>
+        .form-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
 
-        <!-- Email Address -->
-        <div class="mt-4">
-            <x-input-label for="email" :value="__('Email')" />
-            <x-text-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
-            <x-input-error :messages="$errors->get('email')" class="mt-2" />
-        </div>
+        .form-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #2d3748; /* Couleur du texte */
+        }
 
-        <!-- Password -->
-        <div class="mt-4">
-            <x-input-label for="password" :value="__('Mot de passe')" />
+        .form-field {
+            margin-bottom: 20px;
+        }
 
-            <x-text-input id="password" class="block mt-1 w-full"
-                            type="password"
-                            name="password"
-                            required autocomplete="new-password" />
+        .form-label {
+            font-weight: bold;
+            color: #4a5568; /* Couleur du texte */
+            margin-bottom: 5px;
+        }
 
-            <x-input-error :messages="$errors->get('password')" class="mt-2" />
-        </div>
+        .form-input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #cbd5e0; /* Bordure */
+            border-radius: 4px;
+            background-color: #edf2f7; /* Couleur de fond de l'input */
+        }
 
-        <!-- Confirm Password -->
-        <div class="mt-4">
-            <x-input-label for="password_confirmation" :value="__('Confirmer le mot de passe')" />
+        .form-error {
+            color: #e53e3e; /* Couleur du texte d'erreur */
+            margin-top: 5px;
+        }
 
-            <x-text-input id="password_confirmation" class="block mt-1 w-full"
-                            type="password"
-                            name="password_confirmation" required autocomplete="new-password" />
+        .form-link {
+            font-size: 0.875rem;
+            color: #4a5568; /* Couleur du texte du lien */
+            text-decoration: underline;
+            margin-right: 10px;
+        }
 
-            <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
-        </div>
+        .form-button {
+            padding: 10px 20px;
+            background-color: #4299e1; /* Couleur de fond du bouton */
+            color: #ffffff; /* Couleur du texte du bouton */
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
 
-        <div class="flex items-center justify-end mt-4">
-            <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('login') }}">
-                {{ __('Vous êtes déjà inscrit ?') }}
-            </a>
+        .form-button:hover {
+            background-color: #2b6cb0; /* Couleur de fond du bouton au survol */
+        }
+    </style>
 
-            <x-primary-button class="ms-4 text-white  bg-blue-500">
-                {{ __('S incrire') }}
-            </x-primary-button>
-        </div>
-    </form>
+    <div class="form-container">
+        <form method="POST" action="{{ route('register') }}">
+            @csrf
+
+            <div class="form-header">
+                <h1 class="form-title">INSCRIPTION</h1>
+            </div>
+
+            <!-- Name -->
+            <div class="form-field">
+                <label class="form-label" for="name">Nom</label>
+                <input id="name" class="form-input" type="text" name="name" value="{{ old('name') }}" required autofocus autocomplete="name" />
+                <x-input-error :messages="$errors->get('name')" class="form-error" />
+            </div>
+
+            <!-- Email Address -->
+            <div class="form-field">
+                <label class="form-label" for="email">Email</label>
+                <input id="email" class="form-input" type="email" name="email" value="{{ old('email') }}" required autocomplete="username" />
+                <x-input-error :messages="$errors->get('email')" class="form-error" />
+            </div>
+
+            <!-- Password -->
+            <div class="form-field">
+                <label class="form-label" for="password">Mot de passe</label>
+                <input id="password" class="form-input" type="password" name="password" required autocomplete="new-password" />
+                <x-input-error :messages="$errors->get('password')" class="form-error" />
+            </div>
+
+            <!-- Confirm Password -->
+            <div class="form-field">
+                <label class="form-label" for="password_confirmation">Confirmer le mot de passe</label>
+                <input id="password_confirmation" class="form-input" type="password" name="password_confirmation" required autocomplete="new-password" />
+                <x-input-error :messages="$errors->get('password_confirmation')" class="form-error" />
+            </div>
+
+            <div class="flex items-center justify-end mt-4">
+                <a class="form-link" href="{{ route('login') }}">Vous êtes déjà inscrit ?</a>
+                <button type="submit" class="form-button">S'inscrire</button>
+            </div>
+        </form>
+    </div>
 </x-guest-layout>
